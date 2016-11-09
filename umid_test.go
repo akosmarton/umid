@@ -6,10 +6,13 @@ import (
 )
 
 func TestNewAsBytes(t *testing.T) {
-	z := make([]byte, 10)
 	b := NewAsBytes()
 
-	if reflect.DeepEqual(z, b) {
+	if len(b) != 10 {
+		t.Fail()
+	}
+
+	if reflect.DeepEqual(b, make([]byte, 10)) {
 		t.Fail()
 	}
 }
@@ -17,7 +20,11 @@ func TestNewAsBytes(t *testing.T) {
 func TestNewAsString(t *testing.T) {
 	s := NewAsString()
 
-	if s == "" {
+	if len(s) != 20 {
+		t.Fail()
+	}
+
+	if s == "00000000000000000000" {
 		t.Fail()
 	}
 }
