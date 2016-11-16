@@ -27,4 +27,6 @@ In this example, the value of **s** would be:
 ```
 
 ## Installation
+```
 go get -u github.com/akosmarton/umid
+```
